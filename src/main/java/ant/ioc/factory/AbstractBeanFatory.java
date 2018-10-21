@@ -12,11 +12,11 @@ private Map<String, BeanDefinition> beanMap = new ConcurrentHashMap<String, Bean
 		return beanMap.get(beanName).getBean();
 	}
 	
-	public void registerBeanDefination(String name, BeanDefinition beanDef) {
+	public void registerBeanDefination(String name, BeanDefinition beanDef) throws Exception {
 		Object bean = doCreateBean(beanDef);
 		beanDef.setBean(bean);
 		beanMap.put(name, beanDef);
 	}
 	
-	protected abstract Object doCreateBean(BeanDefinition def);
+	protected abstract Object doCreateBean(BeanDefinition def) throws Exception;
 }

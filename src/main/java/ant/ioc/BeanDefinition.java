@@ -10,7 +10,8 @@ public class BeanDefinition {
 
 	private String beanClassName;
 	
-	private PropertyValues propertyValues;
+	private PropertyValues propertyValues = new PropertyValues();
+	private String beanName;
 	
 	public BeanDefinition() {
 	}
@@ -51,6 +52,14 @@ public class BeanDefinition {
 
 	public void setPropertyValues(PropertyValues propertyValues) {
 		this.propertyValues = propertyValues;
+	}
+
+	public String getBeanName() {
+		return beanName;
+	}
+
+	public void setBeanName(String beanName) {
+		this.beanName = beanName;
 	}
 
 }

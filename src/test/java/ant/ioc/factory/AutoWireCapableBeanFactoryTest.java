@@ -10,7 +10,7 @@ import ant.ioc.SimpleBean;
 public class AutoWireCapableBeanFactoryTest {
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		BeanFactory factory = new AutoWireCapableBeanFactory();
 		BeanDefinition definition = new BeanDefinition();
 		definition.setBeanClass(SimpleBean.class);
