@@ -2,6 +2,8 @@ package ant.ioc.xml;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.jar.Attributes.Name;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -72,10 +74,39 @@ public class XMLBeanDefinitionReader extends AbstractBeanDefinitionReader{
 					String beanName = pro.getAttribute("ref");
 					BeanReference reference = new BeanReference(beanName);
 					beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name, reference));
+				}else if (pro.getChildNodes()!=null) {
+					NodeList child = pro.getChildNodes();
+					for(int j=0; j<child.getLength();j++) {
+						Node node2 = child.item(j);
+						if(node2 instanceof Element) {
+							Element col = (Element)node2;
+							if(col.getNodeName()=="list") {
+								doParseCollection(col, name, beanDefinition);
+							}
+						}
+						
+					}
 				}
 				
 			}
 		}
+		
+	}
+	
+	public void doParseCollection(Element element, String name, BeanDefinition beanDefinition) {
+		NodeList child = element.getChildNodes();
+		List list = new ArrayList(child.getLength());
+		for(int j=0; j<child.getLength();j++) {
+			Node node2 = child.item(j);
+			if(node2 instanceof Element) {
+				Element col = (Element)node2;
+				if(col.getNodeName()=="value") {
+					list.add(col.getFirstChild().getNodeValue());
+				}
+			}
+			
+		}
+		beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name, list));
 		
 	}
 

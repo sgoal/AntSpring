@@ -16,10 +16,10 @@
         <property name="name" value="Hello World!"></property>
         <property name="bean" ref="simpleBean"></property>
         <property name = "listName">
-        <list>
-        	<value>"test1"</value>
-        	<value>"test2"</value>
-        </list>
+	        <list>
+	        	<value>"test1"</value>
+	        	<value>"test2"</value>
+	        </list>
         </property>
     </bean> 
 

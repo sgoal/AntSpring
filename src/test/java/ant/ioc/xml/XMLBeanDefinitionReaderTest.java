@@ -41,6 +41,8 @@ public class XMLBeanDefinitionReaderTest {
 		BeanService service = (BeanService) factory.getBean("beanService");
 		assertEquals("hello",tBean.getContent());
 		assertEquals(service.getBean(),tBean);
+		assertTrue(service.getListName().size()==2);
+		System.out.println(service.getListName());
 	}
 
 }
