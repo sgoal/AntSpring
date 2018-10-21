@@ -12,9 +12,15 @@
         <property name="content" value="hello"></property>
     </bean>
 
-   <!--  <bean name="helloWorldService" class="us.codecraft.tinyioc.HelloWorldService">
-        <property name="text" value="Hello World!"></property>
-        <property name="outputService" ref="outputService"></property>
-    </bean> -->
+   <bean name="beanService" class="ant.ioc.BeanService">
+        <property name="name" value="Hello World!"></property>
+        <property name="bean" ref="simpleBean"></property>
+        <property name = "listName">
+        <list>
+        	<value>"test1"</value>
+        	<value>"test2"</value>
+        </list>
+        </property>
+    </bean> 
 
 </beans>

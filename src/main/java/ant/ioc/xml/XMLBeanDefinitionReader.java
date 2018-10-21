@@ -15,6 +15,7 @@ import org.w3c.dom.NodeList;
 
 import ant.ioc.AbstractBeanDefinitionReader;
 import ant.ioc.BeanDefinition;
+import ant.ioc.BeanReference;
 import ant.ioc.PropertyValue;
 import ant.ioc.io.ReasourceLoader;
 
@@ -63,8 +64,16 @@ public class XMLBeanDefinitionReader extends AbstractBeanDefinitionReader{
 			if(node instanceof Element) {
 				Element pro = (Element)node;
 				String name = pro.getAttribute("name");
-				PropertyValue v = new PropertyValue(name, pro.getAttribute("value"));
-				beanDefinition.getPropertyValues().addPropertyValue(v);
+				String value = pro.getAttribute("value");
+				if(value!=null && value.length()>0) {
+					PropertyValue v = new PropertyValue(name, value);
+					beanDefinition.getPropertyValues().addPropertyValue(v);
+				}else if (pro.getAttribute("ref") != null &&pro.getAttribute("ref").length()>0) {
+					String beanName = pro.getAttribute("ref");
+					BeanReference reference = new BeanReference(beanName);
+					beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name, reference));
+				}
+				
 			}
 		}
 		
