@@ -1,4 +1,4 @@
-package ant.ioc.context;
+package ant.context;
 
 
 import ant.ioc.factory.AbstractBeanFatory;
@@ -11,7 +11,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext{
 	}
 	
 	@Override
-	public Object getBean(String beanName) {
+	public Object getBean(String beanName) throws Exception {
 		return beanFactory.getBean(beanName);
 	}
 	

@@ -1,4 +1,4 @@
-package ant.ioc.context;
+package ant.context;
 
 import ant.ioc.factory.BeanFactory;
 
