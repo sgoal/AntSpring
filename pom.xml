@@ -4,6 +4,11 @@
   <artifactId>ant-spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+    <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.6.11</version>
+            </dependency>
   	<dependency>
   		<groupId>aopalliance</groupId>
   		<artifactId>aopalliance</artifactId>
