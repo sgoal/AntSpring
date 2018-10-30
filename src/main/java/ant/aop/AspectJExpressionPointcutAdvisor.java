@@ -1,15 +1,6 @@
 package ant.aop;
 
 
-
-import org.aopalliance.intercept.MethodInterceptor;
-import us.codecraft.tinyioc.beans.BeanPostProcessor;
-import us.codecraft.tinyioc.beans.factory.AbstractBeanFactory;
-import us.codecraft.tinyioc.beans.factory.BeanFactory;
-
-import java.util.List;
-
-
 import org.aopalliance.aop.Advice;
 
 

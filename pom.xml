@@ -3,6 +3,13 @@
   <groupId>ant-spring</groupId>
   <artifactId>ant-spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+    <developers>
+        <developer>
+            <id>code4craft</id>
+            <name>Yihua huang</name>
+            <email>code4crafer@gmail.com</email>
+        </developer>
+    </developers>
   <dependencies>
     <dependency>
                 <groupId>org.aspectj</groupId>
