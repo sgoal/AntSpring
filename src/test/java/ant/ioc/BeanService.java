@@ -2,7 +2,7 @@ package ant.ioc;
 
 import java.util.List;
 
-public class BeanService {
+public class BeanService implements Service{
 	private SimpleBean bean;
 	private String name;
 	private List<String> listName;
@@ -16,5 +16,10 @@ public class BeanService {
 	}
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public void service() {
+		System.out.println("service....");
 	}
 }

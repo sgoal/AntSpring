@@ -1,4 +1,4 @@
-package ant.ioc.context;
+package ant.context;
 
 
 
@@ -10,16 +10,17 @@ import ant.ioc.factory.AutoWireCapableBeanFactory;
 import ant.ioc.io.ReasourceLoader;
 import ant.ioc.xml.XMLBeanDefinitionReader;
 
-public class classPathXmlApplicationContext extends AbstractApplicationContext{
+public class ClassPathXmlApplicationContext extends AbstractApplicationContext{
 	private String configLoc;
 	
-	public classPathXmlApplicationContext(String configLoc) {
+	public ClassPathXmlApplicationContext(String configLoc) throws Exception {
 		this(configLoc, new AutoWireCapableBeanFactory());
 	}
 	
-	public classPathXmlApplicationContext(String configLoc,AbstractBeanFatory beanFatory) {
+	public ClassPathXmlApplicationContext(String configLoc,AbstractBeanFatory beanFatory) throws Exception {
 		super(beanFatory);
 		this.configLoc = configLoc;
+		refresh();
 	}
 	
 

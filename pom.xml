@@ -3,4 +3,11 @@
   <groupId>ant-spring</groupId>
   <artifactId>ant-spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>aopalliance</groupId>
+  		<artifactId>aopalliance</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  </dependencies>
 </project>
