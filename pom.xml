@@ -3,7 +3,19 @@
   <groupId>ant-spring</groupId>
   <artifactId>ant-spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+    <developers>
+        <developer>
+            <id>code4craft</id>
+            <name>Yihua huang</name>
+            <email>code4crafer@gmail.com</email>
+        </developer>
+    </developers>
   <dependencies>
+    <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.6.11</version>
+            </dependency>
   	<dependency>
   		<groupId>aopalliance</groupId>
   		<artifactId>aopalliance</artifactId>
