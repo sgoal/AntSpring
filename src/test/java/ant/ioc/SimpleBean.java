@@ -1,5 +1,8 @@
 package ant.ioc;
 
+import ant.ioc.io.annotation.AntAutoWired;
+
+@AntAutoWired
 public class SimpleBean {
 	private String content;
 	

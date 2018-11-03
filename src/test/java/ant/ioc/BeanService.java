@@ -2,6 +2,9 @@ package ant.ioc;
 
 import java.util.List;
 
+import ant.ioc.io.annotation.AntAutoWired;
+
+@AntAutoWired
 public class BeanService implements Service{
 	private SimpleBean bean;
 	private String name;
